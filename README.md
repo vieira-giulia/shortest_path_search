@@ -1,5 +1,7 @@
 # shortest_path_search
 
+python main.c ALGORITHM start_x start_y goal_x goal_y
+
 pathfinder/
 │
 ├── main.py               # Arquivo principal para execução do programa.
@@ -10,7 +12,7 @@ pathfinder/
 │   ├── greedy.py
 │   └── astar.py
 ├── README.md             # Instruções para executar o programa.
-├── map.txt               # Arquivo exemplo com um mapa.
+├── mapas/                # Diretório com mapas teste
 └── docs/                 # Documentação.
     └── report.pdf
 

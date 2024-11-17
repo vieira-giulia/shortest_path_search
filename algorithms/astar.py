@@ -19,9 +19,6 @@ def search(grid, start, goal):
         # If the goal is reached, return the path and its total cost
         if (x, y) == goal: return path, grid[x][y] + cost
 
-        # Skip nodes that have already been visited
-        if (x, y) in visited: continue
-
         # Mark current position as visited
         visited.add((x, y))
 
@@ -33,15 +30,17 @@ def search(grid, start, goal):
             
             # Check if neighbor is within bounds and traversable (not `inf` cost)
             if 0 <= nx < rows and 0 <= ny < cols and grid[nx][ny] != float('inf'):
-                # Calculate the new cost to reach this neighbor
-                new_cost = cost + grid[nx][ny]
-                
-                # If the new cost to this neighbor is cheaper than the previous cost
-                if (nx, ny) not in costs or new_cost < costs[(nx, ny)]:
-                    # Store cheapest cost
-                    costs[(nx, ny)] = new_cost
+                # Add neighbors that have not been visited to queue
+                if (nx, ny) not in visited:
                     # Calculate the new cost to reach this neighbor
-                    heapq.heappush(priority_queue, (new_cost + heuristic((nx, ny), goal), (nx, ny), path + [(nx, ny)], new_cost))
+                    new_cost = cost + grid[nx][ny]
+                
+                    # If the new cost to this neighbor is cheaper than the previous cost
+                    if (nx, ny) not in costs or new_cost < costs[(nx, ny)]:
+                        # Store cheapest cost
+                        costs[(nx, ny)] = new_cost
+                        # Calculate the new cost to reach this neighbor
+                        heapq.heappush(priority_queue, (new_cost + heuristic((nx, ny), goal), (nx, ny), path + [(nx, ny)], new_cost))
 
     # Return None if no path is found
     return None, float('inf')
