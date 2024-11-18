@@ -1,6 +1,13 @@
 import sys
 from algorithms import bfs, ids, ucs, greedy, astar
 
+ALGORITHMS = {
+    "bfs": bfs.search,
+    "ids": ids.search,
+    "ucs": ucs.search,
+    "greedy": greedy.search,
+    "astar": astar.search,
+}
 
 TERRAIN_COSTS = {
     '.': 1.0,  # Grama
@@ -35,21 +42,11 @@ def main():
     # Carrega o mapa
     grid = parse_map(file_path)
 
-    # Seleciona o algoritmo
-    algorithms = {
-        "bfs": bfs.search,
-        "ids": ids.search,
-        "ucs": ucs.search,
-        "greedy": greedy.search,
-        "astar": astar.search,
-    }
-
-    if algorithm not in algorithms:
-        print("Algoritmo inválido. Escolha entre: bfs, ids, ucs, greedy, astar.")
-        sys.exit(1)
+    # Selecionar buscador
+    search = ALGORITHMS[algorithm]
 
     # Executa a busca
-    path, cost = algorithms[algorithm](grid, (xi, yi), (xf, yf))
+    path, cost = search(grid, (xi, yi), (xf, yf))
     print(cost, path)
 
 if __name__ == "__main__":

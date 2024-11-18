@@ -15,8 +15,8 @@ def search(grid, start, goal):
         # Mark current position as visited
         visited.add((x, y))
 
-        # Explore all neighbors (up, down, left, right)
-        for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+        # Explore all neighbors (up, down, right, left)
+        for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
             # Compute observed neighbor's coordinates
             nx, ny = x + dx, y + dy
             

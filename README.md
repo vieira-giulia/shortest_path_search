@@ -1,6 +1,6 @@
 # shortest_path_search
 
-python main.c ALGORITHM start_x start_y goal_x goal_y
+python main.c MAP_FILE_PATH ALGORITHM start_x start_y goal_x goal_y
 
 pathfinder/
 │
