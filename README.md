@@ -3,7 +3,8 @@
 ### Comando para rodar este projeto
 
 ```python
-python main.c [MAP_FILE_PATH] ALGORITHM xi yi xf yf
+python main.c MAP_FILE_PATH ALGORITHM xi yi xf yf
+```
 
 - xi, yi: coordenadas do ponto inicial.
 
@@ -16,4 +17,4 @@ python main.c [MAP_FILE_PATH] ALGORITHM xi yi xf yf
   - Greedy: Guloso.
   - Astar: A*.
 
-- [MAP_FILE_PATH]: caminho para o arquivo de entrada com a descrição do mapa.
+- MAP_FILE_PATH: caminho para o arquivo de entrada com a descrição do mapa.
