@@ -12,9 +12,8 @@ pathfinder/
 │   ├── greedy.py
 │   └── astar.py
 ├── README.md             # Instruções para executar o programa.
-├── mapas/                # Diretório com mapas teste
-└── docs/                 # Documentação.
-    └── report.pdf
+├── mapas/                # Diretório com mapas teste.              
+└── report.pdf            # Documentação.
 
 
 Here’s a detailed explanation of how each algorithm works, focusing on their mechanics, how they navigate the grid, and their specific strategies for finding the path.
